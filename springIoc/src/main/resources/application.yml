@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: spring-ioc
+  profiles:
+    active: ${profile:test}

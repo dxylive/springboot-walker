@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://39.107.43.191/test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      filters: stat,wall
+      initialSize: 50                         # 初始化时建立物理连接的个数
+      minIdle: 50                            # 最小连接池数量
+      maxActive: 50                          # 最大连接池数量
+      maxWait: 5000                          # 获取连接时最大等待时间，单位毫秒
+      timeBetweenEvictionRunsMillis: 60000    # Destroy线程会检测连接的间隔时间，如果连接空闲时间大于等于minEvictableIdleTimeMillis则关闭物理连接
+      minEvictableIdleTimeMillis: 300000      # 连接保持空闲而不被驱逐的最小时间
+      validationQuery: select 1 from dual
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false           # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+      maxPoolPreparedStatementPerConnectionSize: 0 # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。在Druid中，不会存在Oracle下PSCache占用内存过多的问题，可以把这个数值配置大一些，比如说100
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
