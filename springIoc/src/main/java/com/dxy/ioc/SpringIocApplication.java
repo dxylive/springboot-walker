@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.StringUtils;
 
+/**
+ * 启动类
+ */
 @Slf4j
 @SpringBootApplication
 public class SpringIocApplication {
