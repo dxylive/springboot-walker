@@ -1,3 +1,4 @@
 rootProject.name = 'springboot-walker'
 include 'springIoc'
+include 'java_basic'
 
