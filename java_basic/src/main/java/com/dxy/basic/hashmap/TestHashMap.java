@@ -20,6 +20,6 @@ public class TestHashMap {
         List<String> list = new ArrayList<>(1);
         list.add("1");
         list.add("2");
-//        System.out.println(list);
+        System.out.println(list);
     }
 }
